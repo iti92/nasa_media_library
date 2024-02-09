@@ -1,0 +1,37 @@
+
+$dark-mode-bg: #333;
+$dark-mode-text: #fff;
+$light-mode-bg: #fff;
+$light-mode-text: #333;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s ease;
+  --ggs: 1;
+}
+
+.app-container {
+  &.dark-mode {
+    background-color: $dark-mode-bg;
+    color: $dark-mode-text;
+  }
+
+  &.light-mode {
+    background-color: $light-mode-bg;
+    color: $light-mode-text;
+  }
+
+  .mode-switch {
+    // position: fixed;
+    // top: 10px;
+    // right: 10px;
+    // display: flex;
+    // align-items: center;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+}
