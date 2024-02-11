@@ -18,7 +18,7 @@ function DetailedCard({
   imageUrl: string;
 }) {
   const navigate = useNavigate();
-
+  
   return (
     <Container>
       <Button
