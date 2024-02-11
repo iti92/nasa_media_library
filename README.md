@@ -1,30 +1,66 @@
-# React + TypeScript + Vite
+# Nasa media library with Vite, React, TS, ESlint, and Jest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Nasa-media-library-with-Vite-React-TS-ESlint-Jest](https://i.postimg.cc/FHwWXz37/Nasa-media-library-with-Vite-React-TS-ESlint-Jest.png)
 
-Currently, two official plugins are available:
+This is an mobile first app that use data from https://images.nasa.gov/ developed by Iulian Topal.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+Before you begin, ensure you have met the following requirements:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js installed
+- npm installed
+- Git installed
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. **Clone the [repository](git@github.com:iti92//nasa_media_library.git):**
+
+   ```bash
+   git clone git@github.com:iti92//nasa_media_library.git
+   ```
+
+## Installation
+
+Install all project dependencies, use CI command to keep the precise version of packages
+
+```bash
+npm ci
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Running the Project
+
+**To run the project in development mode with hot module replacement:**
+
+```bash
+npm run dev
+```
+
+## Building the Project
+
+**To build the project for production:**
+
+```bash
+npm run build
+```
+
+## Formatting code with ESlint
+
+**To format your TypeScript code using Eslint:**
+
+```bash
+npm run lint
+```
+
+## Test code with Jest
+
+**To format your TypeScript code using Eslint:**
+
+```bash
+npm run test
+```
+
+
+## To Do
+
+Make tests work as needed
