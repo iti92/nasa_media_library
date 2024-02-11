@@ -1,14 +1,45 @@
-export default {
-  preset: 'ts-jest',
-  testEnvironment: 'jest-environment-jsdom',
+module.exports = {
+  roots: ["<rootDir>/src"],
+  collectCoverageFrom: [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!src/**/*.d.ts",
+    "!src/mocks/**",
+  ],
+  coveragePathIgnorePatterns: [],
+  setupFilesAfterEnv: ["./config/jest/setupTests.js"],
+  testEnvironment: "jsdom",
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-    '^.+\\.js$': 'babel-jest',
-    '.+\\.(css|style|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub'
+    "^.+\\.(ts|js|tsx|jsx)$": "@swc/jest",
+    "^.+\\.css$": "<rootDir>/config/jest/cssTransform.cjs",
+    "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)":
+      "<rootDir>/config/jest/fileTransform.cjs",
   },
+  transformIgnorePatterns: [
+    "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+    "^.+\\.module\\.(css|sass|scss)$",
+  ],
+  modulePaths: ["<rootDir>/src"],
   moduleNameMapper: {
-    '\\.(gif|ttf|eot|png)$': '<rootDir>/test/__ mocks __/fileMock.js',
-    '^.+.(css|style|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
-    "^.+\\.svg$": "jest-svg-transformer",
-},
-}
+    "^react-native$": "react-native-web",
+    "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+  },
+  moduleFileExtensions: [
+    // Place tsx and ts to beginning as suggestion from Jest team
+    // https://jestjs.io/docs/configuration#modulefileextensions-arraystring
+    "tsx",
+    "ts",
+    "web.js",
+    "js",
+    "web.ts",
+    "web.tsx",
+    "json",
+    "web.jsx",
+    "jsx",
+    "node",
+  ],
+  watchPlugins: [
+    "jest-watch-typeahead/filename",
+    "jest-watch-typeahead/testname",
+  ],
+  resetMocks: true,
+};

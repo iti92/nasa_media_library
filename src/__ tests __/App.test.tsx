@@ -1,4 +1,5 @@
 import "@testing-library/jest-dom";
+import '../__mocks__/matchMedia.mock.js';
 import { render } from "@testing-library/react";
 import App from "../App";
 
