@@ -1,27 +1,13 @@
-import React, { useState } from "react";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/layout/Layout";
-import SearchPage from "./pages/search/SearchPage";
-import ShowPage from "./pages/show/ShowPage";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/router";
+import Layout from "./components/Layout/Layout";
+import { CssBaseline } from "@mui/material";
 import "./App.scss";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <SearchPage />,
-  },
-  {
-    path: "/show:id",
-    element: <ShowPage />,
-  },
-]);
-
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <Layout>
+      <CssBaseline />
       <RouterProvider router={router} />
     </Layout>
   );

@@ -11,16 +11,25 @@
     "test": "jest"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.8",
+    "@mui/lab": "^5.0.0-alpha.165",
+    "@mui/material": "^5.15.7",
+    "@mui/x-date-pickers": "^6.19.3",
+    "@tanstack/react-query": "^5.18.1",
     "jest-environment-jsdom": "^29.7.0",
     "jest-svg-transformer": "^1.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.7.0",
     "react-router-dom": "^6.22.0",
-    "sort-by": "^1.2.0"
+    "sort-by": "^0.0.2"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.18.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
