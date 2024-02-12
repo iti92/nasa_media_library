@@ -1,7 +1,7 @@
 # Nasa media library with Vite, React, TS, ESlint, and Jest
 
-![Nasa-media-library-with-Vite-React-TS-ESlint-Jest](https://i.postimg.cc/FHwWXz37/Nasa-media-library-with-Vite-React-TS-ESlint-Jest.png)
-![Nasa-media-library-with-Vite-React-TS-ESlint-Jest mobile](https://i.postimg.cc/3x4P4jfn/Nasa-media-library-with-Vite-React-TS-ESlint-Jest-mobile.png)
+![Nasa-media-library-with-Vite-React-TS-ESlint-Jest](https://i.postimg.cc/gj7BNxbb/nasa-media-library-thumbnail.jpg)
+
 
 This is an mobile first app that use data from https://images.nasa.gov/ developed by Iulian Topal.
 
