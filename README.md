@@ -4,6 +4,8 @@
 
 
 This is an mobile first app that use data from https://images.nasa.gov/ developed by Iulian Topal.
+You can explore the live version of the application by following this link:
+https://iti92.github.io/nasa_media_library/
 
 ## Prerequisites
 
