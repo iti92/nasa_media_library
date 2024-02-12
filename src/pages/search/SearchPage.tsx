@@ -1,18 +1,19 @@
 import { useState } from "react";
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import dayjs, { Dayjs } from "dayjs";
 import { CardsGrid } from "../../components/CardsGrid/CardsGrid";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { useSearchResult } from "../../hooks/queryHooks";
+import { Typography } from "@mui/material";
 
 function SearchPage() {
   const [query, setQuery] = useState("");
@@ -32,20 +33,51 @@ function SearchPage() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Container>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} md={6} lg={8} className="flex_all-center">
+        <Grid container spacing={2} className="flex_all-center">
+          <Grid
+            item
+            xs={12}
+            sm={10}
+            md={8}
+            lg={8}
+            sx={{margin: '1.5rem 0 1.3rem 0'}}
+          >
+            <Typography
+              className="header-container"
+              variant="h2"
+              align="center"
+              sx={{ typography: { sm: 'h3', xs: 'h3' } }}
+            >
+              You can find any photo that NASA has ever had!
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            className="flex_all-center"
+            xs={12}
+            sm={12}
+            md={6}
+            lg={8}
+          >
             <TextField
               required
-              label="Search query required"
+              label="Search by query (required)"
               fullWidth
               onChange={(event) => setQuery(event.target.value)}
             ></TextField>
           </Grid>
 
-          <Grid item xs={12} sm={10} md={5} lg={3} className="flex_all-center">
+          <Grid
+            item
+            xs={12}
+            sm={10}
+            md={5}
+            lg={3}
+            className="flex_all-center"
+          >
             <DatePicker
               views={["year"]}
-              label="From"
+              label="Year from"
               onChange={(event: Dayjs | null) => {
                 const year = event ? event.year().toString() : "";
                 setYearStart(year);
@@ -56,7 +88,7 @@ function SearchPage() {
             />
             <DatePicker
               views={["year"]}
-              label="To"
+              label="Year to"
               onChange={(event: Dayjs | null) => {
                 const year = event ? event.year().toString() : "";
                 setYearEnd(year);
@@ -68,7 +100,14 @@ function SearchPage() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={2} md={1} lg={1} className="flex_all-center">
+          <Grid
+            item
+            xs={12}
+            sm={2}
+            md={1}
+            lg={1}
+            className="flex_all-center"
+          >
             <IconButton
               aria-label="search"
               size="large"
@@ -98,13 +137,20 @@ function SearchPage() {
             )}
             {error && <div>An error has occurred: {error}</div>}
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} className="flex_all-center">
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            className="flex_all-center"
+          >
             <IconButton
               aria-label="next"
               size="large"
-              onClick={() => setPage(state => state + 1)}
+              onClick={() => setPage((state) => state + 1)}
               color="primary"
-              sx={{display: data ? 'block' : 'none'}}
+              sx={{ display: data ? "block" : "none" }}
             >
               <ArrowForwardIosIcon fontSize="large" />
             </IconButton>
