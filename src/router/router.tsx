@@ -10,11 +10,11 @@ const router = createHashRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "#/show/:index/:nasaId",
+    path: "/show/:index/:nasaId",
     element: <ShowPage />,
   },
   {
-    path: "#/404",
+    path: "/404",
     element: <ErrorPage />,
   },
 ]);
